@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Onkey2021</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_include_tag 'https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js' %>
+    <%= javascript_include_tag 'https://media.twiliocdn.com/sdk/js/chat/v3.0/twilio-chat.min.js' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign in', sign_in_path %>
+        <% end %>
+
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+      </div>
+    </div>
+    <%= yield %>
+    </div>
+  </body>
+</html>
