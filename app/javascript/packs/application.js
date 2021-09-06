@@ -35,7 +35,10 @@ class Chat {
                 .then(client => this.setupClient(client));
             }
         });
+
+        
     }
+
   
     joinChannel() {
       if (this.channel.state.status !== "joined") {
@@ -64,7 +67,7 @@ class Chat {
           return false;
         });
     }
-    
+
     setupClient(client) {
       this.client = client;
       this.client.getChannelByUniqueName("general")
@@ -75,6 +78,7 @@ class Chat {
             friendlyName: "General Chat Channel"
           }).then((channel) => this.setupChannel(channel));
         });
+
     }
 
     renderMessages() {
@@ -89,11 +93,20 @@ class Chat {
     
         if (message.author) {
           const className = message.author == this.identity ? "user me" : "user";
-          html += `<span class="${className}">${message.author}: </span>`;
+          if (message.author == "system"){
+            html += `<span class="${className}">OnkeyBot: </span>`;
+          }
+          else{
+            html += `<span class="${className}">${message.author}: </span>`;
+          }
         }
-    
+          
         html += message.body;
-        this.messages.push(html);
+        console.log(this.messages)
+        if (this.messages[this.messages.length - 1] != html){
+            this.messages.push(html);
+        }
+        
         this.renderMessages();
     }
     
@@ -123,9 +136,28 @@ Rails.ajax({
                             }
                           });
                     })
-                });
+                })
     }
 });
+
+Rails.ajax({
+    url: "/chats",
+    type: "POST",
+    success: function(data){
+        console.log(data.message)
+    }
+})
+
+Rails.ajax({
+    url: "/chats",
+    type: "DELETE",
+    success: function(data){
+        console.log(data.message)
+    }
+})
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector(".chat")) {

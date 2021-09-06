@@ -18,7 +18,7 @@ class TokensController < ApplicationController
         [grant],
         identity: identity
         )
-
+        
         # Generate the token and send to client
         render json: { identity: identity, token: token.to_jwt }
     end
