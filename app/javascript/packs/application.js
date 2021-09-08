@@ -164,3 +164,4 @@ document.addEventListener("DOMContentLoaded", () => {
       window.chat = new Chat();
     }
 });
+

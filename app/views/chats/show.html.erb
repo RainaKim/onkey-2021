@@ -1,3 +1,20 @@
+<!-- Masthead-->
+
+<div class="container">
+      <div class="header">
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign in', sign_in_path %>
+        <% end %>
+
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+      </div>
+    </div>
 <h1>Chat</h1>
 <div class="chat">
   <div class="messages">
@@ -11,3 +28,158 @@
     <button type="submit">Send</button>
   </form>
 </div>
+
+<script>
+class Chat {
+    constructor() {
+      this.channel = null;
+      this.client = null;
+      this.identity = null;
+      this.messages = ["Connecting..."];
+      this.initialize();
+    }
+  
+    initialize() {
+        this.renderMessages();
+
+        Rails.ajax({
+            url: "/tokens",
+            type: "POST",
+            success: data => {
+            this.identity = data.identity;
+    
+            Twilio.Chat.Client
+                .create(data.token)
+                .then(client => this.setupClient(client));
+            }
+        });
+
+        
+    }
+
+  
+    joinChannel() {
+      if (this.channel.state.status !== "joined") {
+        this.channel.join().then(function(channel) {
+          console.log("Joined General Channel");
+         });
+      }
+    }
+  
+    setupChannel(channel) {
+      this.channel = channel;
+      this.joinChannel();
+      this.addMessage({ body: `Joined general channel as ${this.identity}` });
+      this.channel.on("messageAdded", message => this.addMessage(message));
+      this.setupForm();
+    }
+
+    setupForm() {
+        const form = document.querySelector(".chat form");
+        const input = document.querySelector(".chat form input");
+    
+        form.addEventListener("submit", event => {
+          event.preventDefault();
+          this.channel.sendMessage(input.value);
+          input.value = "";
+          return false;
+        });
+    }
+
+    setupClient(client) {
+      this.client = client;
+      this.client.getChannelByUniqueName("general")
+        .then((channel) => this.setupChannel(channel))
+        .catch((error) => {
+          this.client.createChannel({
+            uniqueName: "general",
+            friendlyName: "General Chat Channel"
+          }).then((channel) => this.setupChannel(channel));
+        });
+
+    }
+
+    renderMessages() {
+        let messageContainer = document.querySelector(".chat .messages");
+        messageContainer.innerHTML = this.messages
+            .map(message => `<div class="message">${message}</div>`)
+            .join("");
+    }
+
+    addMessage(message) {
+        let html = "";
+    
+        if (message.author) {
+          const className = message.author == this.identity ? "user me" : "user";
+          if (message.author == "system"){
+            html += `<span class="${className}">OnkeyBot: </span>`;
+          }
+          else{
+            html += `<span class="${className}">${message.author}: </span>`;
+          }
+        }
+          
+        html += message.body;
+        console.log(this.messages)
+        if (this.messages[this.messages.length - 1] != html){
+            this.messages.push(html);
+        }
+        
+        this.renderMessages();
+    }
+    
+  };
+
+Rails.ajax({
+    url: "/tokens",
+    type: "POST",
+    success: function(data) {
+        Twilio.Chat.Client
+            .create(data.token)
+            .then(function(chatClient) {
+                chatClient.getChannelByUniqueName("general")
+                    .then(function(channel){
+                        // general channel exists
+                    })
+                    .catch(function(){
+                        // general channel does not exist
+                        chatClient.createChannel({
+                            uniqueName: "general",
+                            friendlyName: "General Chat Channel"
+                        }).then(function(channel) {
+                            if (channel.state.status !== "joined") {
+                              channel.join().then(function(channel) {
+                                console.log("Joined General Channel");
+                              })
+                            }
+                          });
+                    })
+                })
+    }
+});
+
+Rails.ajax({
+    url: "/chats",
+    type: "POST",
+    success: function(data){
+        console.log(data.message)
+    }
+})
+
+Rails.ajax({
+    url: "/chats",
+    type: "DELETE",
+    success: function(data){
+        console.log(data.message)
+    }
+})
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.querySelector(".chat")) {
+      window.chat = new Chat();
+    }
+});
+</script>

@@ -2,34 +2,99 @@
 <html>
   <head>
     <title>Onkey2021</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
     <%= csrf_meta_tags %>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
     <%= csp_meta_tag %>
 
-    <%= javascript_include_tag 'https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js' %>
-    <%= javascript_include_tag 'https://media.twiliocdn.com/sdk/js/chat/v3.0/twilio-chat.min.js' %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all'%>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js"></script>
+    <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/chat/v3.0/twilio-chat.min.js"></script>
+
+    <!-- Favicon-->
+    <%= favicon_link_tag asset_path('grew_logo_black.png'), style:"width: 100%" %>
+    <!--<link rel="icon" type="image/x-icon" href="app/assets/images/croptocup_logo.png" />-->
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    
+    <!-- bootstrap-->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">    
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <%#= javascript_pack_tag 'application', media: 'all'%>
+    <%#= javascript_pack_tag 'scripts', media: 'all'%>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+    
+
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNF7ML3X0D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DNF7ML3X0D');
+    </script>
+
   </head>
 
   <body>
-    <div class="container">
-      <div class="header">
-        <% if signed_in? %>
-          Signed in as: <%= current_user.email %>
-          <%= link_to 'Sign out', sign_out_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Sign in', sign_in_path %>
-        <% end %>
+    <!-- Navigation-->
+    
 
-        <div id="flash">
-          <% flash.each do |key, value| %>
-            <div class="flash <%= key %>"><%= value %></div>
-          <% end %>
-      </div>
-    </div>
     <%= yield %>
-    </div>
+    <!-- Footer-->
+    <!-- <footer class="bg-dark py-5">
+        <div class="container">
+            <div class="small text-center text-muted">
+                크롭투컵<br>
+                대구광역시 중구 동덕로 6, 1층 카페 (우 : 41953), 대표자: 최병석<br>
+                사업자등록번호: 860-160-0664 , 통신판매업신고번호: 2020-대구중구-0961<br>
+                개인정보보호책임자: 최병석(croptocup@naver.com), 전화번호:053-269-0818<br>
+                제휴문의: croptocup@naver.com, 계좌번호: 기업은행 / 최병석 / 154-112635-04-011<br>
+                <br>
+                <a href="https://instagram.com/c_c_c_kor" class="text-center justify-content-center">
+                    <i class="bi bi-instagram" style="color: #6c757d"></i>
+                </a>
+            </div>
+            <br>
+            <div class="small text-center text-muted">
+                Copyright©2021 CROPTOCUP. All right reserved
+            </div>
+        </div>
+    </footer> -->
+
+    
+    <!-- Core theme JS-->
+    <!-- <script src="js/scripts.js"></script> -->
+
   </body>
 </html>

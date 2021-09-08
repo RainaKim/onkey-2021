@@ -1,0 +1,189 @@
+<!-- Masthead-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="background-color:  #fff !important;" >
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/home/index">
+            <%= image_tag("onkey-logo.png", style: "width: 10.00rem") %>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0" style="margin-left: 30px">
+                <li class="nav-item" style="display: flex; align-items: center; justify-content: center; "><a class="nav-link js-scroll-trigger" href="/home/subscription" style="color:black; ">About Us</a></li>
+                <li class="nav-item" style="display: flex; align-items: center; justify-content: center; "><a class="nav-link js-scroll-trigger" href="https://smartstore.naver.com/croptocup" target="_blank" style="color:black;">Apps</a></li>
+                <li class="nav-item" style="display: flex; align-items: center; justify-content: center; "><a class="nav-link js-scroll-trigger" href="/home/story" style="color:black;">Products</a></li>
+                <li class="nav-item" style="display: flex; align-items: center; justify-content: center; "><a class="nav-link js-scroll-trigger" href="/home/story" style="color:black;">Sign up</a></li>
+                <li class="nav-item"style="display: flex; align-items: center; justify-content: center; margin-left: 0.5rem ">
+                    <a class="btn btn-lg" style=" padding:0.9rem; font-size: 0.9rem; font-weight: bold; text-align: center !important; background-color: #007ee6; color: white; border-width:0px; " href="/chats/show">Talk to Experts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section id="services" class="" style="background-color: #fff !important; padding-top: 5rem; padding-bottom: 5rem;">
+    <div id="portfolio">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters" style="display: flex; align-items: center; justify-content: center;">
+                <div style="display: flex; flex-direction: row; align-items: center;justify-content: space-between;">
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem;">
+                        <h1 class="text-black mt-0" style="font-size: 4rem; "><strong>Make your</strong></h1>
+                        <h1 class="text-black mt-0" style="font-size: 4rem; "><strong>car smart</strong></h1>
+                        <br>
+                        <p class="text-black mt-0">Get smart access to your car. Rentable key with driving history and parking location will be added. Now your smartphone is your car key with 5 minutes simple installation </p><br>
+                        <a class="btn btn-lg" style=" padding:1.0rem; font-size: 1rem; font-weight: bold; text-align: center !important; background-color: #007ee6; color: white; border-width:0px" href="/chats/show">Talk to Experts</a>
+                    </div>
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 3rem; max-width: 630px; text-align: center">
+                        <%= image_tag("onkey-car-illu.png", style:"width:70%;") %>
+                    </div>
+                </div>
+            </di>
+        </div>
+    </div>    
+</section>
+<section class="bg-gray page-sub" style="background-color: #FAFAFA !important">
+  <div class="container">
+      <div class="row justify-content-center " id="pricing">
+        <div class="subscription-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" >
+          <h1 class="text-black mt-0" style="font-weight: bold" >Get 30 days free trial </h1>
+          <h6 class="text-black mt-0">Find best package for your car into smart-car</h6>
+        </p>
+        <p class="mb-4" style="font-size: 0.8rem">
+            * Hardware Kit + Apps / 30days free
+        </p>
+        <br>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 mb-4">
+          <div class="col">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <h6 class="text-black mt-0 font-weight-bold">Standard</h6>
+                  <%= image_tag("ONKEY_Device_transparent.png", style: "width: 50%;") %>
+                   <!--<li class="font-weight-bold text-center" style="font-size: 0.8rem; text-align: left; margin-top: 1rem;" >다양한 커피를 즐긴다면</li>-->
+                  <li style="font-size: 1rem; text-align: left; margin-top: 1rem;" >Keyless</li>
+                <li style="font-size: 1rem; text-align: left" >Driving History & Parking Location</li>
+                <li style="font-size: 1rem; text-align: left" >Rent-Key</li>
+                <br><br>
+                </ul>
+                <hr class="gray my-4"/>
+                <h3 style="text-align: right; display: inline">$9.9 <h6 style="text-align: right; display: inline">/ MO'</h6></h3>
+                <br><br>
+                <%= link_to "Talk to Experts", "/home/payment_users_check/#{@roasterpick_id}/",  :class => "w-100 btn btn-lg btn-price-normal"%>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <ul class="list-unstyled mt-3 mb-4">
+                <h6 class="text-black mt-0 font-weight-bold">Pro</h6>
+                <%= image_tag("ONKEY_Device_transparent.png", style: "width: 50%;") %>    
+                <!--<li class="font-weight-bold text-center" style="font-size: 0.8rem; text-align: left; margin-top: 1rem;" >다양한 커피를 즐긴다면</li>-->
+                <li style="font-size: 1rem; text-align: left; margin-top: 1rem;" >Keyless</li>
+                <li style="font-size: 1rem; text-align: left" >Driving History & Parking Location</li>
+                <li style="font-size: 1rem; text-align: left" >Rent-Key</li>
+                <li style="font-size: 1rem; text-align: left" >Touch Button</li>
+                <br>
+            </ul>
+              <hr class="gray my-4" />
+              <h3 style="text-align: right; display: inline">$12.9 <h6 style="text-align: right; display: inline">/ MO'</h6></h3>
+              <br><br>
+              <%= link_to "Talk to Experts", "/home/payment_users_check/#{@blend_product_id}/",  :class => "w-100 btn btn-lg btn-price-normal"%>
+            </div>
+          </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <ul class="list-unstyled mt-3 mb-4">
+                <h6 class="text-black mt-0 font-weight-bold">Enterprise</h6>
+                <%= image_tag("ONKEY_Device_transparent.png", style: "width: 50%;") %>    
+                <!--<li class="font-weight-bold text-center" style="font-size: 0.8rem; text-align: left; margin-top: 1rem;" >다양한 커피를 즐긴다면</li>-->
+                <br>
+                <li style="font-size: 1rem; text-align: left; margin-top: 1rem;" >Keyless</li>
+                <li style="font-size: 1rem; text-align: left" >Driving History & Parking Location</li>
+                <li style="font-size: 1rem; text-align: left" >Rent-Key</li>
+                <li style="font-size: 1rem; text-align: left" >Toggle Button</li>
+                <li style="font-size: 1rem; text-align: left" >Remote Start</li>
+              </ul>
+              <hr class="gray my-4" />
+              <h3 style="text-align: right; display: inline">$19.9 <h6 style="text-align: right; display: inline">/ MO'</h6></h3>
+              <br><br>
+              <%= link_to "Talk to Experts", "/home/payment_users_check/#{@single_origin_id}/",  :class => "w-100 btn btn-lg btn-price"%>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+<section id="services" class="" style="background-color: #fff !important; padding-top: 5rem; padding-bottom: 5rem;">
+  <div class="container">
+      <div class="row justify-content-center " id="pricing">
+        <div class="subscription-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" >
+          <h1 class="text-black mt-0" style="font-weight: bold" >Increase mobility life better  </h1>
+          <h1 class="text-black mt-0" style="font-weight: bold" >by free to access your car</h1>
+        </p>
+        <a href="https://youtu.be/TJtzQhDwEdU">Watch a video -></a>
+        <br>
+        </div>
+        <div class="row no-gutters" style="display: flex; align-items: center; justify-content: center;">
+                <div style="display: flex; flex-direction: row; align-items: center;justify-content: space-between;">
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem;">
+                        <h4 class="text-black mt-0" style=" "><strong>ONKEY Access</strong></h4>
+                        <br>
+                        <h1 class="text-black mt-0" style="font-size: 4rem; "><strong>Keyless Entry</strong></h1>
+                        <br>
+                        <p class="text-black mt-0">Get smart access to your car. Rentable key with driving history and parking location will be added. Now your smartphone is your car key with 5 minutes simple installation </p><br>
+                        
+                    </div>
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem; max-width: 630px; text-align: center; margin-left: 15rem;">
+                        <%= image_tag("phone_main.png", style:"width:50%;") %>
+                    </div>
+                    <br>
+                </div>
+                <br><br><br>
+                <div style="display: flex; flex-direction: row; align-items: center;justify-content: space-between;">
+                  <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem; max-width: 630px; text-align: center; margin-right: 15rem;">
+                        <%= image_tag("phone_parking.png", style:"width:50%;") %>
+                    </div>
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem;">
+                        <h4 class="text-black mt-0" style=" "><strong>ONKEY Parking Location</strong></h4>
+                        <br>
+                        <h1 class="text-black mt-0" style="font-size: 4rem; "><strong>Parking, Driving History</strong></h1>
+                        <br>
+                        <p class="text-black mt-0">Get smart access to your car. Rentable key with driving history and parking location will be added. Now your smartphone is your car key with 5 minutes simple installation </p><br>
+                        
+                    </div>
+                    <br>
+                </div>
+                <br><br><br>
+                <div style="display: flex; flex-direction: row; align-items: center;justify-content: space-between;">
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem;">
+                        <h4 class="text-black mt-0" style=" "><strong>ONKEY Rental Key</strong></h4>
+                        <br>
+                        <h1 class="text-black mt-0" style="font-size: 4rem; "><strong>Rent the Access</strong></h1>
+                        <br>
+                        <p class="text-black mt-0">Get smart access to your car. Rentable key with driving history and parking location will be added. Now your smartphone is your car key with 5 minutes simple installation </p><br>
+                    </div>
+                    <div style="width: 50%; max-width: 560px; padding-left: 50px; padding-right: 15px; padding-top: 6rem; max-width: 630px; text-align: center; margin-left: 15rem;">
+                        <%= image_tag("phone_rent.png", style:"width:50%;") %>
+                    </div>
+                    <br>
+                </div>
+            </di>
+      </div>
+  </div>
+</section>
+<section class=" page-sub" style="background-color: #007ee6 !important">
+  <div class="container">
+      <div class="row justify-content-center " id="pricing">
+        <div class="subscription-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" >
+          <h1 class="mt-0" style="color: white; "><strong>Freed from ride</strong></h1><br>
+          <p class="mt-0" style="color: white;"><strong>Build smart-car with 5 minutes simple installation.</strong></p>
+        </p>
+        <br><br><br>
+        <a class="btn btn-lg" style=" padding:1.0rem; font-size: 1rem; font-weight: bold; text-align: center !important; background-color: #fff; color: #007ee6; border-width:0px" href="/chats/show">Talk to Experts</a>
+        <br>
+        </div>
+      </div>
+  </div>
+</section>
