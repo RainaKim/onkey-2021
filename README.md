@@ -4,12 +4,12 @@ Onkey's official website built using Ruby on Rails. The user can sign up/sign in
 
 ## Screenshots
 
-![screenshot1](/app/assets/images/readme1)
-![screenshot2](/app/assets/images/readme2)
-![screenshot3](/app/assets/images/readme3)
-![screenshot4](/app/assets/images/readme4)
-![screenshot5](/app/assets/images/readme5)
-![screenshot1](/app/assets/images/readme6)
+![screenshot1](/app/assets/images/readme1.png)
+![screenshot2](/app/assets/images/readme1.png)
+![screenshot3](/app/assets/images/readme3.png)
+![screenshot4](/app/assets/images/readme4.png)
+![screenshot5](/app/assets/images/readme5.png)
+![screenshot1](/app/assets/images/readme6.png)
 
 ## Ruby version
 ```
