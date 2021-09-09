@@ -26,7 +26,7 @@ rails:db create
 rails:db migrate
 ```
 
-### How to use?
+## How to use?
 - Clone the repository
 - Inside the project folder, open terminal
 - Install gems with ```bundle install``` command
