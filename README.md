@@ -2,7 +2,7 @@
 
 Onkey's official website built using Ruby on Rails. The user can sign up/sign in/sign out and talk to other users in general channel in real time chat page and get a customer support as well by OnkeyBot(Chatbot).
 
-### Screenshots
+## Screenshots
 
 ![screenshot1](/app/assets/images/readme1)
 ![screenshot2](/app/assets/images/readme2)
@@ -11,17 +11,17 @@ Onkey's official website built using Ruby on Rails. The user can sign up/sign in
 ![screenshot5](/app/assets/images/readme5)
 ![screenshot1](/app/assets/images/readme6)
 
-### Ruby version
+## Ruby version
 ```
 2.6.3
 ```
 
-### Database creation
+## Database creation
 ```
 rails:db create
 ```
 
-### Database migration
+## Database migration
 ```
 rails:db migrate
 ```
