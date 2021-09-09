@@ -1,24 +1,31 @@
-# README
+# OnKey 2021 Official Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Onkey's official website built using Ruby on Rails. The user can sign up/sign in/sign out and talk to other users in general channel in real time chat page and get a customer support as well by OnkeyBot(Chatbot).
 
-Things you may want to cover:
+### Screenshots
 
-* Ruby version
+![screenshot1](/app/assets/images/readme1)
+![screenshot2](/app/assets/images/readme2)
+![screenshot3](/app/assets/images/readme3)
+![screenshot4](/app/assets/images/readme4)
+![screenshot5](/app/assets/images/readme5)
+![screenshot1](/app/assets/images/readme6)
 
-* System dependencies
+### Ruby version
+```2.6.3```
 
-* Configuration
+### Database creation
+```rails:db create```
 
-* Database creation
+### Database migration
+```rails:db migrate```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### How to use?
+- Clone the repository
+- Inside the project folder, open terminal
+- Install gems by running the following command
+```bundle install```
+- Create and migrate the database
+- Run server with the following command
+```rails s```
+- Open the browser with the localhost address and explore more about Onkey and talk with OnkeyBot!
