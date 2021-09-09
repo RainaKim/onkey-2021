@@ -12,13 +12,19 @@ Onkey's official website built using Ruby on Rails. The user can sign up/sign in
 ![screenshot1](/app/assets/images/readme6)
 
 ### Ruby version
-```2.6.3```
+```
+2.6.3
+```
 
 ### Database creation
-```rails:db create```
+```
+rails:db create
+```
 
 ### Database migration
-```rails:db migrate```
+```
+rails:db migrate
+```
 
 ### How to use?
 - Clone the repository
