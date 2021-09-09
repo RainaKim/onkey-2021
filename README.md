@@ -23,9 +23,7 @@ Onkey's official website built using Ruby on Rails. The user can sign up/sign in
 ### How to use?
 - Clone the repository
 - Inside the project folder, open terminal
-- Install gems by running the following command
-```bundle install```
+- Install gems with ``bundle install``` command
 - Create and migrate the database
-- Run server with the following command
-```rails s```
+- Run server with ```rails s``` command
 - Open the browser with the localhost address and explore more about Onkey and talk with OnkeyBot!
