@@ -2,6 +2,9 @@
 
 Onkey's official website built using Ruby on Rails. The user can sign up/sign in/sign out and talk to other users in general channel in real time chat page and get a customer support as well by OnkeyBot(Chatbot).
 
+## Website URL
+[a link](onkey.herokuapp.com)
+
 ## Screenshots
 
 ![screenshot1](/app/assets/images/readme1.png)
@@ -13,7 +16,7 @@ Onkey's official website built using Ruby on Rails. The user can sign up/sign in
 
 ## Ruby version
 ```
-2.6.3
+3.0.0
 ```
 
 ## Database creation
